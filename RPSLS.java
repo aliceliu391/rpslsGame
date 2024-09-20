@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.Random;
 
-public class RPSLSReview {
+public class RPSLS {
 	
 	// Game stats.
 	static int gamesPlayed = 0, wins = 0, losses = 0, ties = 0;
