@@ -9,8 +9,6 @@ public class RPSLSReview {
 	static int gamesPlayed = 0, wins = 0, losses = 0, ties = 0;
 	static Scanner input = new Scanner(System.in);
 
-
-
 	/**
 	 * Displays introduction
 	 */
