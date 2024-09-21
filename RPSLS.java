@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.Random;
 
-public class RPSLS {
+public class RPSLSReview {
 	
 	// Game stats.
 	static int gamesPlayed = 0, wins = 0, losses = 0, ties = 0;
@@ -141,6 +141,23 @@ public class RPSLS {
 	static void createFile(File file) {
 		
 		if (file.exists()) {
+			while(true) {
+				try {
+					System.out.println("Do you want to load old data [l] or start over [s]? ");
+					String choice = input.next();
+					if (choice.equals("l")) break;
+					else if (choice.equals("s")) {
+						updateFile(file);
+						return;
+					} else throw new InputMismatchException();
+					
+				} catch (InputMismatchException e) {
+					System.out.println("Please enter \"l\" or \"s\". ");
+					input.nextLine();
+				}
+				
+			}		
+			
 			try {
 				FileReader fin = new FileReader(file);
 				BufferedReader reader = new BufferedReader(fin);
@@ -175,8 +192,8 @@ public class RPSLS {
 		int playerChoice, computerChoice;
 		String stringComputer, stringPlayer;
 		
-		createFile(file);
 		displayIntro();
+		createFile(file);
 		
 		// Main game loop
 		String result;
